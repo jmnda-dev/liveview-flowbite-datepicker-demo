@@ -22,7 +22,7 @@ defmodule DemoWeb.PostLive.FormComponent do
         <.input field={@form[:title]} type="text" label="Title" />
         <.input field={@form[:body]} type="text" label="Body" />
           <.input phx-hook="Datepicker" field={@form[:date_published]} type="text" placeholder="Select date" label="Date Published" />
-        
+
         <:actions>
           <.button phx-disable-with="Saving...">Save Post</.button>
         </:actions>
@@ -81,7 +81,6 @@ defmodule DemoWeb.PostLive.FormComponent do
          |> push_patch(to: socket.assigns.patch)}
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        IO.inspect changeset, label: "Changeset"
         {:noreply, assign_form(socket, changeset)}
     end
   end

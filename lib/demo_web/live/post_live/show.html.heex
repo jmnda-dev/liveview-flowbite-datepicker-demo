@@ -14,7 +14,8 @@
   <:item title="Date published"><%= @post.date_published %></:item>
 </.list>
 
-<.back navigate={~p"/posts"}>Back to posts</.back>
+<.back navigate={~p"/"}>Back to posts</.back>
+
 
 <.modal :if={@live_action == :edit} id="post-modal" show on_cancel={JS.patch(~p"/posts/#{@post}")}>
   <.live_component
